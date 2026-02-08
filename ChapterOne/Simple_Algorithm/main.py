@@ -12,8 +12,6 @@ def summed(nums):
 
     return total
 """
-
-
 # List comprehension
 def summed(nums):
     return sum(num for num in nums)

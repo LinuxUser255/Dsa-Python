@@ -11,7 +11,7 @@ submit_cases = run_cases + [
 ]
 
 
-def test(input1, expected_output):
+def do_test(input1, expected_output):
     print("---------------------------------")
     print(f"Inputs:")
     print(f" * nums: {input1}")
@@ -30,7 +30,7 @@ def main():
     failed = 0
     skipped = len(submit_cases) - len(test_cases)
     for test_case in test_cases:
-        correct = test(*test_case)
+        correct = do_test(*test_case)
         if correct:
             passed += 1
         else:

@@ -1,4 +1,3 @@
-
 from main import *
 
 run_cases = [
@@ -17,7 +16,7 @@ submit_cases = run_cases + [
 ]
 
 
-def test(input1, expected_output):
+def validate_minimum(input1, expected_output):
     """Tests the `find_minimum(nums): function from main.py
        with a given input and expected output.
 
@@ -53,7 +52,7 @@ def main():
     failed = 0
     skipped = len(submit_cases) - len(test_cases)
     for test_case in test_cases:
-        correct = test(*test_case)
+        correct = validate_minimum(*test_case)
         if correct:
             passed += 1
         else:
