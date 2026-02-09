@@ -24,6 +24,7 @@ def binary_search(target, arr):
         # Avoids potential overflow: mid = low + (high - low) // 2
         mid = (low + high) // 2
 
+        # If arr at mid-equals target
         if arr[mid] == target:
             return True
         elif arr[mid] < target:

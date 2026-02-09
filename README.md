@@ -9,14 +9,34 @@
 Build data structures from scratch and learn how to think through complex algorithms in Python. Practice your hard
 problem-solving skills and write faster code
 
-**What are Algorithms?** 
+## What is an Algorithm?
 
-An [Algorithm](https://en.wikipedia.org/wiki/Algorithm) is a finite sequence of mathematically rigorous instructions, typically used to solve a class
-of specific problems or to perform a computation.
+An [Algorithm](https://en.wikipedia.org/wiki/Algorithm) is a **finite sequence of well-defined steps that solves a specific problem or performs a task.**
 
-Algorithms are used as specifications for performing calculations
-and data processing. More advanced algorithms can use conditionals to divert the code execution through 
-various routes (referred to as automated decision-making) and deduce valid inferences (referred to as automated reasoning).
+Think of it like a recipe: 
+given the same ingredients (inputs), following the same steps will always produce the same dish (output). The recipe must eventually end — you can't stir forever.
+
+In programming, algorithms are the logic behind your code. They take input, process it through a series of operations —
+which may include loops, conditionals, and calculations — and produce an output.
+
+**Key properties of an algorithm:**
+
+- **Finite** — It must eventually terminate
+- **Definite** — Each step is precisely defined
+- **Input** — It takes zero or more inputs
+- **Output** — It produces at least one output
+- **Effective** — Each step is simple enough to be carried out
+
+### The academic explanation
+
+An [Algorithm](https://en.wikipedia.org/wiki/Algorithm) is a finite sequence of mathematically rigorous instructions, typically used to solve a class of specific
+problems or to perform a computation.
+
+Algorithms are used as specifications for performing calculations and data processing. More advanced algorithms can use
+conditionals to divert the code execution through various routes (referred to as automated decision-making) and deduce
+valid inferences (referred to as automated reasoning).
+
+
 
 
 #### [Link here -> Learn Data Structures and Algorithms in Python](https://www.boot.dev/courses/learn-data-structures-and-algorithms-python)

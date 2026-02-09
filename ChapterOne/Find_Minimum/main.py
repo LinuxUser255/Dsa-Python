@@ -1,16 +1,15 @@
 def find_minimum(nums):
-    """thes numbers are referenced here are in the main_test.py file"""
-    # nums = [7, 4, 3, 100, 2343243, 343434, 1, 2, 32]
+    # Step 1: Initialize minimum here
+    minimum = float("inf")
 
-    if not nums:  # Check if list is empty
-        return None  # Skipped (list is not empty)
+    # Step 2: Check for empty list here
+    if len(nums) == 0:
+        return None
 
-    minimum = nums[0]  #  minimum = 7 (first element at index 0)
-
-    for num in nums[1:]:  # nums[1:] creates a slice: [4, 3, 100, 2343243, 343434, 1, 2, 32]
-        # Starts from index 1 (skips the first element 7)
-
+    # Step 3: Loop through nums and update minimum here
+    for num in nums:
         if num < minimum:
             minimum = num
 
+    # Step 4: Return the minimum here
     return minimum

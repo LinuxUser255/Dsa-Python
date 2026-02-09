@@ -18,10 +18,10 @@ submit_cases = run_cases + [
 ]
 
 
-def test(size, users, expected_indexes):
+def do_test(size, users, expected_indexes):
     print("---------------------------------")
     print(f" * HashMap size: {size}")
-    hm = HashMap(size)
+    hm = HashMap(size) # hash map object creation
     try:
         actual = []
         for i, user in enumerate(users):
@@ -42,9 +42,9 @@ def test(size, users, expected_indexes):
 def main():
     passed = 0
     failed = 0
-    skipped = len(submit_cases) - len(test_cases)
-    for test_case in test_cases:
-        correct = test(*test_case)
+    skipped = len(submit_cases) - len(do_test_cases)
+    for do_test_case in do_test_cases:
+        correct = do_test(*do_test_case)
         if correct:
             passed += 1
         else:
@@ -59,8 +59,8 @@ def main():
         print(f"{passed} passed, {failed} failed")
 
 
-test_cases = submit_cases
+do_test_cases = submit_cases
 if "__RUN__" in globals():
-    test_cases = run_cases
+    do_test_cases = run_cases
 
 main()

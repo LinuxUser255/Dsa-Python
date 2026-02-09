@@ -32,7 +32,7 @@ Binary search is the quintessential O(log(n)) algorithm. It repeatedly divides t
 
 ---
 
-[Big-O-Notation-Log-N.png](Big-O-Notation-Log-N.png)
+![Big-O-Notation-Log-N.png](../../Images/Big-O-Notation-Log-N.png)
 
 ---
 
@@ -126,6 +126,7 @@ def binary_search(target, arr):
         # Avoids potential overflow: mid = low + (high - low) // 2
         mid = (low + high) // 2
 
+        # Comparing The value stored at the middle position in the array
         if arr[mid] == target:
             return True
         elif arr[mid] < target:
@@ -136,6 +137,17 @@ def binary_search(target, arr):
     return False
 ```
 
+_Reading `arr[mid]`
+```python
+#Reads as:
+#arr[median] → "array at median"
+#Emphasizes it's the middle element
+        # If arr at mid-equals target
+       if arr[mid] == target:
+
+```
+
+
 ## Why This Passes Tests
 
 - For large arr (e.g., range(2000000), target=105028): ~21 iterations max → instant.
@@ -144,3 +156,58 @@ def binary_search(target, arr):
 - Negative: [-2,-1], -1 → finds it.
 - Missing: Fast fail without timeout.
 
+## Boot.Dev's solution
+```python
+
+def binary_search(target, arr):
+    low = 0
+    high = len(arr) - 1
+
+    while low <= high:
+        median = (low + high) // 2
+        
+        if arr[median] == target:
+            return True
+        elif arr[median] < target:
+            low = median + 1  # Search right half
+        else:
+            high = median - 1  # Search left half
+
+    return False
+```
+
+## Code comparison & analysis
+
+#### mine
+```python
+mid = (low + high) // 2
+
+if arr[mid] == target:
+    return True
+elif arr[mid] < target:
+    low = mid + 1
+else:
+    high = mid - 1
+```
+**Reads as:**
+arr[mid] → "array at mid"
+Clear that mid is an index
+
+#### Boot.Dev's Variable Name: `median`
+```python
+median = (low + high) // 2
+
+if arr[median] == target:
+    return True
+elif arr[median] < target:
+    low = median + 1
+else:
+    high = median - 1
+```
+
+Reads as:
+arr[median] → "array at median"
+Emphasizes it's the middle element
+
+
+using `mid` is industry standard
