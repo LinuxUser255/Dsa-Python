@@ -59,7 +59,7 @@ def reverse_string(original: str) -> str:
 
 
 def main():
-    sample = "foo bar"
+    sample = "foo bar" # this is the original string we want to reverse
     result = reverse_string(sample)
 
     print(f'Original : "{sample}"')
