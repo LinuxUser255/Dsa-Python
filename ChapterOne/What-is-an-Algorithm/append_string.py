@@ -1,60 +1,69 @@
 #!/usr/bin/env python3
 
 """
-Try this:
-Here's some pseudocode for a mystery algorithm:
+=============================================================
+INTRODUCTION TO ALGORITHMS — String Reversal
+=============================================================
 
-Start with an original string called S
-and a new empty string called R.
+What is an Algorithm?
+    An algorithm is a step-by-step set of instructions for
+    solving a problem. Think of it like a recipe — follow
+    the steps in order, and you get a predictable result.
 
-Loop through S from its last character
-to its first character,
+The Problem:
+    Given a string like "foo bar", return it reversed: "rab oof"
 
-and for each char, add it to the end of R.
-sequence.append(value, /)¶
-Append value to the end of the sequence
-This is equivalent to writing
-seq[len(seq):len(seq)] = [value].
+The Plan (Pseudocode):
+    1. Start with an original string S  →  "foo bar"
+    2. Create an empty list R           →  []
+    3. Walk through S backwards,
+       adding each character to R       →  ['r', 'a', 'b', ...]
+    4. Join R into a single string      →  "rab oof"
+    5. Return the result
 
-Once you’ve processed all the characters,
-return R.
+Why use a list instead of building a string directly?
+    Strings in Python are immutable — you can't change them
+    in place. Appending to a list and joining at the end is
+    much faster for long strings. This is called O(n) time,
+    meaning the work grows linearly with the input size.
 
-Quick Tips for Improvement:
+Try it yourself:
+    - Empty string:      ""        →  ""
+    - Single character:  "a"       →  "a"
+    - Special chars:     "hi!@#"   →  "#@!ih"
 
-Efficiency: For long strings, this list-append-join approach is optimal (O(n) time),
-            avoiding slow string concatenation.
-
-Edge Cases: Test with empty ("" → ""), single char ("a" → "a"), or
-            special chars ("hello!@#").
-
-Alternatives: Python's slicing (return input_str[::-1]) is idiomatic,
-                but your loop builds algorithmic thinking—key for DSA
-                like palindromes or stacks (Chapter 7).
-
-Modularity: In your projects, wrap this in a class method for reuse.
-
+Coming up in later chapters:
+    This pattern of processing characters one at a time is
+    the foundation for palindrome checks, stack problems,
+    and more (see Chapter 7).
+=============================================================
 """
 
 
-def loop_char():
-    # need to loop backwards to reverse the string
-    s = "foo bar"
-    R = []  # initialize `r` as an empty list to store reversed string
+def reverse_string(original: str) -> str:
+    """
+    Reverses a string one character at a time.
 
-    input_str = s
+    Args:
+        original: The string you want to reverse.
 
-    input_str = list(input_str)
+    Returns:
+        A new string with the characters in reverse order.
+    """
+    reversed_chars = []  # We'll collect characters here as we go backwards
 
-    for char in reversed(input_str):
-        R.append(char)  # append each character to the end of the reversed string
+    for char in reversed(original):   # Walk through the string back-to-front
+        reversed_chars.append(char)   # Add each character to our list
 
-    return ''.join(R)
+    return ''.join(reversed_chars)    # Glue the list back into one string
 
 
 def main():
-    """call the loop_char() function within the print function"""
-    print(f'foo bar reversed:  {loop_char()}  \n')
-    #print(loop_char())
+    sample = "foo bar"
+    result = reverse_string(sample)
+
+    print(f'Original : "{sample}"')
+    print(f'Reversed : "{result}"')
 
 
 if __name__ == "__main__":

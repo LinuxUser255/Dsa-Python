@@ -11,7 +11,7 @@ in the list.
 
 
 def find_minimum(nums):
-    minimum = float('inf')
+    minimum = float('inf') # set current_min to a very large number like infinity
     if len(nums) == 0:
         return None
 
@@ -26,7 +26,7 @@ def find_minimum(nums):
 
 def main():
     find_minimum([1, 2, 3, 4, 5])
-    # 1, 2, 3, 4, 5 are passed as arguments to the nums parameter
+    # 1, 2, 3, 4, 5 are passed as arguments to the nums parameter in the find_minimum function
 
 
 if __name__ == "__main__":
