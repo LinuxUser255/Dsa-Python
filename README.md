@@ -79,11 +79,17 @@ Figure out what Big-O notation and time complexity mean in the context of algori
 ### 4. Sorting Algorithms
 Learn how data is sorted on a computer, and how to sort it faster
 
+[Tutorial](ch04_sorting/docs/tutorial.md) · lessons: `bubble_sort` → `merge_sort` → `insertion_sort` → `quick_sort` → `selection_sort` → `influencers`
+
 ### 5. Exponential Time
 Understand why exponential time complexity is so dangerous
 
+[Tutorial](ch05_exponential_time/docs/tutorial.md) · lessons: `exponential_growth` → `fibonacci` → `power_set` → `permutations`
+
 ### 6. Data Structures Intro
 Learn about data structures and how they play a critical role in algorithms
+
+[Tutorial](ch06_data_structures_intro/docs/tutorial.md) · lessons: `paginate_feed` → `job_title_counts` → `duplicate_handles` → `mutual_connections` → `user_index`
 
 ### 7. Stacks
 Learn about stacks, the original LIFO data structure and build one from scratch
@@ -114,3 +120,44 @@ Implement and understand the ever-famous breadth first and depth-first search al
 
 ### 16. P vs NP
 Learn about P and NP
+---
+
+## Repository layout & naming conventions
+
+Everything is **lowercase `snake_case`**: directories, `.py` files, `.md` notes, and images.
+Python can only `import` a module whose name is a valid identifier, so names like
+`hours-to-seconds.py` or `main_boot.devs.py` can't be imported. `snake_case` is what
+[PEP 8](https://peps.python.org/pep-0008/#package-and-module-names) recommends.
+
+```
+chNN_topic/                 # zero-padded so chapters sort in course order
+    docs/tutorial.md        # chapter tutorial: read this first
+    examples/               # runnable demos (no lesson answers)
+    lesson_name/            # one folder per Boot.dev lesson
+        main.py             # your solution (the file you edit)
+        main_test.py        # Boot.dev's test harness (don't edit)
+        assignment.md       # the lesson prompt
+        hints.md            # optional: nudges, no answers
+        solutions.md        # optional: write-ups after solving
+```
+
+Exception: `README.md` keeps its conventional uppercase name.
+
+## Running the tests
+
+From inside a lesson folder, exactly like on Boot.dev:
+
+```bash
+cd ch03_big_o/order_1
+python main_test.py
+```
+
+Or with `pytest` from the repo root (each lesson runs in its own process, so the many
+`main.py` files never collide):
+
+```bash
+pytest                       # every lesson
+pytest ch03_big_o            # one chapter
+pytest ch03_big_o/order_1    # one lesson
+pytest -k insert             # lessons whose folder name matches
+```
